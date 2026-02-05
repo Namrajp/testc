@@ -22,13 +22,13 @@ int main(void)
 void itoa(int n, char c[])
 {
     int i, sign;
-    if((sign = n)< 0) 
-        n = -n;
+    if((sign = n)< 0) // record sign
+        n = -n; // make n positive
     i = 0;
 
-    do {
-        c[i++] = n % 10 + '0';
-    } while ((n /= 10) > 0);
+    do { // generate digits in reverse order
+        c[i++] = n % 10 + '0';  // get next digit
+    } while ((n /= 10) > 0);  // delete it
 
     if (sign < 0)
         c[i++] = '-';
